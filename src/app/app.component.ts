@@ -14,6 +14,13 @@ export class AppComponent {
     {moc : 'By Email', id : 123},
     {moc : 'By Phone', id : 345}
   ]
+  obj ={
+    answer: "JavaScript: The Good Parts",
+    contactMode: "By Phone",
+    secrectQuestion: "fvrtBook",
+    subscribeToEmail: true,
+    userInfo: {userName: 'priya', email: 'priyahatkar@gmail.com'}
+}
   // onFormSubmit(signInForm :NgForm){
   //   if(signInForm.valid){
   //     console.log(signInForm.value);
@@ -26,5 +33,8 @@ export class AppComponent {
       console.log(this.signInForm.value);
       this.signInForm.reset()
     }
+  }
+  onUpdateForm(){
+    this.signInForm.form.patchValue(this.obj)
   }
 }
